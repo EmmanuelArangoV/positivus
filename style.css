@@ -7,7 +7,15 @@
 
     --font-family: 'Space Grotesk', sans-serif;
 
+    --font-light: 300;
+    --font-regular: 400;
+    --font-medium: 500;
+    --font-semibold: 600;
+    --font-bold: 700;
+
     --max-width: 1200px;
+    --padding-y: 3rem;
+    --padding-x: 4rem;
 }
 
 * {
@@ -23,12 +31,16 @@ body {
     line-height: 1.6;
     max-width: var(--max-width);
     margin: 0 auto;
+    padding: var(--padding-y) var(--padding-x);
 }
+
+/* Header Styles */
 
 header {
     display: grid;
     grid-template-columns: 2fr auto auto;
     align-items: center;
+    padding-bottom: var(--padding-x);
 }
 
 .navigation-menu ul {
@@ -36,9 +48,99 @@ header {
     display: flex;
     gap: 20px;
     grid-column: 2;
-    margin-right: 2rem;
+    margin-right: 1rem;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navigation-menu ul li {
+    display: inline;
+    margin: 0.5rem
+}
+
+.navigation-menu ul li a {
+    text-decoration: none;
+    color: var(--dark);
+    font-family: var(--font-family), serif;
+    font-weight: var(--font-regular);
 }
 
 .nav-button {
     grid-column: 3;
+
+}
+
+.nav-button button {
+    font-family: var(--font-family), serif;
+    font-weight: var(--font-regular);
+    background: transparent;
+    border: 1px solid var(--dark);
+    padding: 1rem 1rem;
+    border-radius: 15px;
+    transition: 0.4s ease;
+}
+
+.nav-button button:hover {
+    font-weight: var(--font-medium);
+    cursor: pointer;
+    background: var(--green);
+}
+
+/* Hero Section Styles */
+
+.hero-section {
+    align-items: start;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--padding-y);
+    margin-bottom: var(--padding-x);
+}
+
+.hero-section h1 {
+    font-size: clamp(2.5rem, 4vw, 4rem);
+    font-weight: var(--font-bold);
+    margin-bottom: 1.5rem;
+}
+
+.hero-section p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    font-weight: var(--font-regular);
+}
+.hero-section img {
+    width: 100%;
+    height: auto;
+}
+
+.hero-button button {
+    background-color: var(--dark);
+    padding: 1rem 2rem;
+    color: var(--gray);
+    font-family: var(--font-family), serif;
+    font-weight: var(--font-regular);
+    border-radius: 15px;
+    transition: 0.4s ease;
+}
+
+.hero-button button:hover {
+    background-color: var(--green);
+    color: var(--dark);
+    font-weight: var(--font-medium);
+    cursor: pointer;
+}
+
+/* Logos Section Styles */
+
+.logos-section {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: space-between;
+}
+
+.logos-section img {
+    width: 100%;
+    object-fit: contain;
+    filter: grayscale(100%);
 }
